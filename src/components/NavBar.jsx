@@ -6,6 +6,9 @@ export default function NavBar() {
       <h1>
         <Link to="/cars">Cars</Link>
       </h1>
+      <button>
+        <Link to="/cars/new">New Car</Link>
+      </button>
     </nav>
   );
 };
