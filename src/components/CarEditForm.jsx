@@ -106,6 +106,8 @@ export default function CarEditForm() {
                         type="number"
                         onChange={handleText}
                         placeholder="Year"
+                        min="1900"
+                        max="2024"
                         required
                     />
                     <br />
@@ -117,6 +119,7 @@ export default function CarEditForm() {
                         type="number"
                         onChange={handleText}
                         placeholder="Price"
+                        min="0"
                         required
                     />
                     <br />
@@ -138,6 +141,7 @@ export default function CarEditForm() {
                         type="number"
                         onChange={handleText}
                         placeholder="Mileage"
+                        min="0"
                     />
                     <br />
 

@@ -19,20 +19,34 @@ export default function NewCarForm() {
         is_favorite: false,
     });
 
-    const addCar = () => {
+    const addCar = async () => {
         try {
+            const year = parseInt(car.year);
+            if (year < 1900 || year > 2024) {
+                alert("Please enter a valid year between 1900 and 2024.");
+                return;
+            }
+
             const carData = {
                 ...car,
                 image_url: car.image_url || defaultCarImage,
             }
-            fetch(`${API}/cars`, {
+
+            const response = await fetch(`${API}/cars`, {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/json'
+                    'Content-Type': 'application/json',
                 },
-                body: JSON.stringify(carData)
-            })
-                .then(() => navigate("/cars"))
+                body: JSON.stringify(carData),
+            });
+    
+            if (response.ok) {
+                const newCar = await response.json();
+                const newCarUrl = `/cars/${newCar.id}`;
+                navigate(newCarUrl);
+            } else {
+                console.error("Failed to add car:", response.statusText);
+            }
         } catch (err) {
             return err;
         }
@@ -77,6 +91,8 @@ export default function NewCarForm() {
                     type="number"
                     onChange={handleText}
                     placeholder="Year"
+                    min="1900"
+                    max="2024"
                     required
                 />
                 <br />
@@ -88,6 +104,7 @@ export default function NewCarForm() {
                     type="number"
                     onChange={handleText}
                     placeholder="Price"
+                    min="0"
                     required
                 />
                 <br />
@@ -109,6 +126,7 @@ export default function NewCarForm() {
                     type="number"
                     onChange={handleText}
                     placeholder="Mileage"
+                    min="0"
                 />
                 <br />
 

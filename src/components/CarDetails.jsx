@@ -25,13 +25,24 @@ export default function CarDetails() {
     useEffect(() => { fetchCar() }, [id]);
 
     const handleDelete = () => {
-        try {
-            fetch(`${API}/cars/${id}`, { method: "DELETE" })
-                .then(() => navigate("/cars"))
-        } catch (err) {
-            return err;
+        const isConfirmed = window.confirm("Are you sure you want to delete this car?");
+        if (isConfirmed) {
+            try {
+                fetch(`${API}/cars/${id}`, { method: "DELETE" })
+                    .then(() => navigate("/cars"))
+            } catch (err) {
+                return err;
+            }
         }
     }
+
+    const formatCurrency = (value) => {
+        return new Intl.NumberFormat('en-US', {
+            style: 'currency',
+            currency: 'USD',
+            minimumFractionDigits: 2,
+        }).format(value);
+    };
 
     return (
         <div>
@@ -44,9 +55,9 @@ export default function CarDetails() {
                         Make: {car.make}<br />
                         Model: {car.model}<br />
                         Year: {car.year}<br />
-                        Price: {car.price}<br />
+                        Price: {formatCurrency(parseFloat(car.price))}<br />
                         Color: {car.color}<br />
-                        Mileage: {car.mileage}<br />
+                        Mileage: {parseFloat(car.mileage).toLocaleString()}<br />
                         Condition: {car.condition}<br />
                         Location: {car.location}<br />
                         Favorite: {car.is_favorite ? <span>⭐️</span> : <span>❌</span>}
