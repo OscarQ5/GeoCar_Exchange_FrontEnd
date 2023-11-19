@@ -6,7 +6,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/static': {
-        target: 'https://geocar-exchange-backend.onrender.com',
+        target: 'https://aesthetic-crisp-160450.netlify.app',
         changeOrigin: true,
       },
     },
