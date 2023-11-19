@@ -50,7 +50,7 @@ export default function CarDetails() {
                 <p>Loading...</p>
             ) : (
                 <>
-                    <img src={car.image_url} alt={`Car: ${car.make} ${car.model}`} style={{ maxWidth: '50%', height: 'auto' }} />
+                    <img src={`https://geocar-exchange-backend.onrender.com${car.image_url}`} alt={`Car: ${car.make} ${car.model}`} style={{ maxWidth: '50%', height: 'auto' }} />
                     <h3>
                         Make: {car.make}<br />
                         Model: {car.model}<br />

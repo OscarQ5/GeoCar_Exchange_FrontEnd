@@ -29,7 +29,7 @@ export default function CarEditForm() {
                     const carDetails = await response.json();
                     setCar({
                         ...carDetails,
-                        image_url: carDetails.image_url || "http://localhost:5555/static/CAR_DEFAULT.jpg",
+                        image_url: carDetails.image_url || "https://geocar-exchange-backend.onrender.com/static/CAR_DEFAULT.jpg",
                     });
                     setLoading(false)
                 } else {

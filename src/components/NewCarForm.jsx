@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 
 const API = import.meta.env.VITE_API_URL;
-const defaultCarImage = "http://localhost:5555/static/CAR_DEFAULT.jpg";
+const defaultCarImage = "https://geocar-exchange-backend.onrender.com/static/CAR_DEFAULT.jpg";
 
 export default function NewCarForm() {
     const navigate = useNavigate();
