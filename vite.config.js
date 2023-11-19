@@ -6,7 +6,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/static': {
-        target: 'http://localhost:5555',
+        target: 'https://geocar-exchange-backend.onrender.com',
         changeOrigin: true,
       },
     },
