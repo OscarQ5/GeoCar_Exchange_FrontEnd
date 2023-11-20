@@ -30,6 +30,7 @@ export default function Cars() {
                         <th>Model</th>
                         <th>Make</th>
                         <th>Year</th>
+                        <th>For Sale</th>
                     </tr>
                 </thead>
                 <tbody>

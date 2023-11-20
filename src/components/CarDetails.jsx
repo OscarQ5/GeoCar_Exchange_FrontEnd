@@ -151,16 +151,17 @@ export default function CarDetails() {
                             style={{ maxWidth: '50%', height: 'auto', marginRight: '20px' }}
                         />
                         <div className="content">
-                            <h3 className="title is-3">
-                                Make: {car.make}<br />
-                                Model: {car.model}<br />
-                                Year: {car.year}<br />
-                                Price: {formatCurrency(parseFloat(car.price))}<br />
-                                Color: {car.color}<br />
-                                Mileage: {parseFloat(car.mileage).toLocaleString()}<br />
-                                Condition: {car.condition}<br />
-                                Location: {car.location}<br />
-                                Favorite: {car.is_favorite ? <span>⭐️</span> : <span>❌</span>}
+                            <h3 className="title is-5">
+                                Make: {car.make}<br /><br />
+                                Model: {car.model}<br /><br />
+                                Year: {car.year}<br /><br />
+                                Price: {formatCurrency(parseFloat(car.price))}<br /><br />
+                                Color: {car.color}<br /><br />
+                                Mileage: {parseFloat(car.mileage).toLocaleString()}<br /><br />
+                                Condition: {car.condition}<br /><br />
+                                Location: {car.location}<br /><br />
+                                Favorite: {car.is_favorite ? <span>⭐️</span> : <span>❌</span>}<br /><br />
+                                For Sale: {car.for_sale ? <span>✅</span> : <span>❌</span>}
                             </h3>
                         </div>
                         <div className="buttons">

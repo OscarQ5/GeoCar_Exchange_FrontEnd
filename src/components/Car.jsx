@@ -21,6 +21,13 @@ export default function Car({ car }) {
                     <span className="has-text-grey">{car.year}</span>
                 </span>
             </td>
+            <td>
+                {car.for_sale ? (
+                    <span>✅</span>
+                ) : (
+                    <span>&nbsp; &nbsp; &nbsp;</span>
+                )}
+            </td>
         </tr>
     )
 }

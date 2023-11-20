@@ -17,6 +17,7 @@ export default function NewCarForm() {
         location: "",
         image_url: "",
         is_favorite: false,
+        for_sale: true,
     });
 
     const addCar = async () => {
@@ -208,6 +209,21 @@ export default function NewCarForm() {
                                 checked={car.is_favorite}
                             />
                             &nbsp; Mark as Favorite
+                        </label>
+                    </div>
+                </div>
+
+                <div className="field">
+                    <label className="label" htmlFor="for_sale">For Sale:</label>
+                    <div className="control">
+                        <label className="checkbox">
+                            <input
+                                id="for_sale"
+                                type="checkbox"
+                                onChange={handleCheckbox}
+                                checked={car.for_sale}
+                            />
+                            &nbsp; Mark For Sale
                         </label>
                     </div>
                 </div>

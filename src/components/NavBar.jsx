@@ -13,7 +13,7 @@ export default function NavBar() {
         <div className="navbar-item">
           <div className="nav-buttons">
             <Link to="/cars/new" className="button is-primary">
-              <strong>New Car</strong>
+              <strong>Sell Car</strong>
             </Link>
           </div>
         </div>

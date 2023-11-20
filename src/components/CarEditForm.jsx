@@ -19,6 +19,7 @@ export default function CarEditForm() {
         location: "",
         image_url: "",
         is_favorite: false,
+        for_sale: true,
     });
 
     useEffect(() => {
@@ -44,7 +45,9 @@ export default function CarEditForm() {
     }, [id]);
 
     const handleText = e => setCar({ ...car, [e.target.id]: e.target.value });
-    const handleCheckbox = () => setCar({ ...car, is_favorite: !car.is_favorite });
+    const handleCheckbox = (fieldName) => {
+        setCar((prevCar) => ({ ...prevCar, [fieldName]: !prevCar[fieldName] }));
+    };
 
     const updateCar = async () => {
         try {
@@ -219,10 +222,25 @@ export default function CarEditForm() {
                                 <input
                                     id="is_favorite"
                                     type="checkbox"
-                                    onChange={handleCheckbox}
+                                    onChange={() => handleCheckbox("is_favorite")}
                                     checked={car.is_favorite}
                                 />
                                 Mark as Favorite
+                            </label>
+                        </div>
+                    </div>
+
+                    <div className="field">
+                        <label className="label" htmlFor="for_sale">For Sale:</label>
+                        <div className="control">
+                            <label className="checkbox">
+                                <input
+                                    id="for_sale"
+                                    type="checkbox"
+                                    onChange={() => handleCheckbox("for_sale")}
+                                    checked={car.for_sale}
+                                />
+                                Mark For Sale
                             </label>
                         </div>
                     </div>
