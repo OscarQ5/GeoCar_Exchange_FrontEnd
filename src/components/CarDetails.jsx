@@ -171,6 +171,9 @@ export default function CarDetails() {
                             <Link to={`/cars/${id}/edit`}>
                                 <button className="button is-primary">Edit</button>
                             </Link>
+                            <Link to="/maintenance">
+                                <button className="button is-success">Buy</button>
+                            </Link>
                             <button className="button is-danger" onClick={handleDelete}>Delete</button>
                         </div>
                         {distance !== null ? (
@@ -189,8 +192,8 @@ export default function CarDetails() {
                         ) : (
                             <div style={{
                                 position: "absolute",
-                                top: "10px", 
-                                left: "10px", 
+                                top: "10px",
+                                left: "10px",
                                 background: "rgba(255, 255, 255, 0.8)",
                                 padding: "5px",
                                 borderRadius: "5px",
