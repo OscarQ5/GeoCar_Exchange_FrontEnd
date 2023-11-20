@@ -86,3 +86,6 @@ button:focus-visible {
   flex-direction: column;
   align-items: center;
 }
+.title.is-1 {
+  color: #000000;
+}
