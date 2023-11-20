@@ -72,126 +72,171 @@ export default function CarEditForm() {
     };
 
     return (
-        <div>
+        <div className="container">
             {loading ? (
                 <p>Loading...</p>
             ) : (
                 <form onSubmit={handleSubmit}>
-                    <label htmlFor="make">Make:</label>
-                    <input
-                        id="make"
-                        value={car.make}
-                        type="text"
-                        onChange={handleText}
-                        placeholder="Make"
-                        required
-                    />
-                    <br />
+                    <div className="field">
+                        <label className="label" htmlFor="make">Make:</label>
+                        <div className="control">
+                            <input
+                                className="input"
+                                id="make"
+                                value={car.make}
+                                type="text"
+                                onChange={handleText}
+                                placeholder="Make"
+                                required
+                            />
+                        </div>
+                    </div>
 
-                    <label htmlFor="model">Model:</label>
-                    <input
-                        id="model"
-                        value={car.model}
-                        type="text"
-                        onChange={handleText}
-                        placeholder="Model"
-                        required
-                    />
-                    <br />
+                    <div className="field">
+                        <label className="label" htmlFor="model">Model:</label>
+                        <div className="control">
+                            <input
+                                className="input"
+                                id="model"
+                                value={car.model}
+                                type="text"
+                                onChange={handleText}
+                                placeholder="Model"
+                                required
+                            />
+                        </div>
+                    </div>
 
-                    <label htmlFor="year">Year:</label>
-                    <input
-                        id="year"
-                        value={car.year}
-                        type="number"
-                        onChange={handleText}
-                        placeholder="Year"
-                        min="1900"
-                        max="2024"
-                        required
-                    />
-                    <br />
+                    <div className="field">
+                        <label className="label" htmlFor="year">Year:</label>
+                        <div className="control">
+                            <input
+                                className="input"
+                                id="year"
+                                value={car.year}
+                                type="number"
+                                onChange={handleText}
+                                placeholder="Year"
+                                min="1900"
+                                max="2024"
+                                required
+                            />
+                        </div>
+                    </div>
 
-                    <label htmlFor="price">Price:</label>
-                    <input
-                        id="price"
-                        value={car.price}
-                        type="number"
-                        onChange={handleText}
-                        placeholder="Price"
-                        min="0"
-                        required
-                    />
-                    <br />
+                    <div className="field">
+                        <label className="label" htmlFor="price">Price:</label>
+                        <div className="control">
+                            <input
+                                className="input"
+                                id="price"
+                                value={car.price}
+                                type="number"
+                                onChange={handleText}
+                                placeholder="Price"
+                                min="0"
+                                required
+                            />
+                        </div>
+                    </div>
 
-                    <label htmlFor="color">Color:</label>
-                    <input
-                        id="color"
-                        value={car.color}
-                        type="text"
-                        onChange={handleText}
-                        placeholder="Color"
-                    />
-                    <br />
+                    <div className="field">
+                        <label className="label" htmlFor="color">Color:</label>
+                        <div className="control">
+                            <input
+                                className="input"
+                                id="color"
+                                value={car.color}
+                                type="text"
+                                onChange={handleText}
+                                placeholder="Color"
+                            />
+                        </div>
+                    </div>
 
-                    <label htmlFor="mileage">Mileage:</label>
-                    <input
-                        id="mileage"
-                        value={car.mileage}
-                        type="number"
-                        onChange={handleText}
-                        placeholder="Mileage"
-                        min="0"
-                    />
-                    <br />
+                    <div className="field">
+                        <label className="label" htmlFor="mileage">Mileage:</label>
+                        <div className="control">
+                            <input
+                                className="input"
+                                id="mileage"
+                                value={car.mileage}
+                                type="number"
+                                onChange={handleText}
+                                placeholder="Mileage"
+                                min="0"
+                            />
+                        </div>
+                    </div>
 
-                    <label htmlFor="condition">Condition:</label>
-                    <input
-                        id="condition"
-                        value={car.condition}
-                        type="text"
-                        onChange={handleText}
-                        placeholder="New, Used or Certified"
-                    />
-                    <br />
+                    <div className="field">
+                        <label className="label" htmlFor="condition">Condition:</label>
+                        <div className="control">
+                            <input
+                                className="input"
+                                id="condition"
+                                value={car.condition}
+                                type="text"
+                                onChange={handleText}
+                                placeholder="New, Used or Certified"
+                            />
+                        </div>
+                    </div>
 
-                    <label htmlFor="location">Location:</label>
-                    <input
-                        id="location"
-                        value={car.location}
-                        type="text"
-                        onChange={handleText}
-                        placeholder="Location"
-                        required
-                    />
-                    <br />
+                    <div className="field">
+                        <label className="label" htmlFor="location">Location:</label>
+                        <div className="control">
+                            <input
+                                className="input"
+                                id="location"
+                                value={car.location}
+                                type="text"
+                                onChange={handleText}
+                                placeholder="Location"
+                                required
+                            />
+                        </div>
+                    </div>
 
-                    <label htmlFor="image_url">Image URL:</label>
-                    <input
-                        id="image_url"
-                        value={car.image_url}
-                        type="text"
-                        onChange={handleText}
-                        placeholder="Image URL"
-                    />
-                    <br />
+                    <div className="field">
+                        <label className="label" htmlFor="image_url">Image URL:</label>
+                        <div className="control">
+                            <input
+                                className="input"
+                                id="image_url"
+                                value={car.image_url}
+                                type="text"
+                                onChange={handleText}
+                                placeholder="Image URL"
+                            />
+                        </div>
+                    </div>
 
-                    <label htmlFor="is_favorite">Favorite:</label>
-                    <input
-                        id="is_favorite"
-                        type="checkbox"
-                        onChange={handleCheckbox}
-                        checked={car.is_favorite}
-                    />
-                    <br />
-                    <br />
-                    <button type="submit">Submit</button>
+                    <div className="field">
+                        <label className="label" htmlFor="is_favorite">Favorite:</label>
+                        <div className="control">
+                            <label className="checkbox">
+                                <input
+                                    id="is_favorite"
+                                    type="checkbox"
+                                    onChange={handleCheckbox}
+                                    checked={car.is_favorite}
+                                />
+                                Mark as Favorite
+                            </label>
+                        </div>
+                    </div>
+
+                    <div className="field is-grouped">
+                        <div className="control">
+                            <button className="button is-primary" type="submit">Submit</button>
+                        </div>
+                        <div className="control">
+                            <Link to={`/cars/${id}`} className="button is-link">Back</Link>
+                        </div>
+                    </div>
                 </form>
             )}
-            <br />
-            <Link to={`/cars/${id}`}>
-                <button>Back</button>
-            </Link>
         </div>
     )
 }

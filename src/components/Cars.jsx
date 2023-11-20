@@ -21,22 +21,21 @@ export default function Cars() {
     }, [])
 
     return (
-        <div>
-            <section>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Favorite</th>
-                            <th>Model</th>
-                            <th>Make</th>
-                            <th>Year</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {cars.map(car => <Car key={car.id} car={car} />)}
-                    </tbody>
-                </table>
-            </section>
+        <div className="section">
+            <h2 className="title">Car List</h2>
+            <table className="table is-fullwidth">
+                <thead>
+                    <tr>
+                        <th>Favorite</th>
+                        <th>Model</th>
+                        <th>Make</th>
+                        <th>Year</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {cars.map(car => <Car key={car.id} car={car} />)}
+                </tbody>
+            </table>
         </div>
     )
 }

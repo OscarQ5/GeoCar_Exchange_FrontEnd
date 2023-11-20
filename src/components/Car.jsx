@@ -11,14 +11,14 @@ export default function Car({ car }) {
                 )}
             </td>
             <td>
-                <Link to={`/cars/${car.id}`}> {car.model}</Link>
+                <Link to={`/cars/${car.id}`} className="has-text-link"> {car.model}</Link>
             </td>
             <td>
-                {car.make}
+                <span className="has-text-weight-bold">{car.make}</span>
             </td>
             <td>
                 <span>
-                    {car.year}
+                    <span className="has-text-grey">{car.year}</span>
                 </span>
             </td>
         </tr>

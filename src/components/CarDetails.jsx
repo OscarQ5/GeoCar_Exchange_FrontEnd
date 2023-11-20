@@ -45,38 +45,39 @@ export default function CarDetails() {
     };
 
     return (
-        <div>
+        <div className="section">
             {loading ? (
                 <p>Loading...</p>
             ) : (
                 <>
-                    <img src={`https://geocar-exchange-backend.onrender.com${car.image_url}`} alt={`Car: ${car.make} ${car.model}`} style={{ maxWidth: '50%', height: 'auto' }} />
-                    <h3>
-                        Make: {car.make}<br />
-                        Model: {car.model}<br />
-                        Year: {car.year}<br />
-                        Price: {formatCurrency(parseFloat(car.price))}<br />
-                        Color: {car.color}<br />
-                        Mileage: {parseFloat(car.mileage).toLocaleString()}<br />
-                        Condition: {car.condition}<br />
-                        Location: {car.location}<br />
-                        Favorite: {car.is_favorite ? <span>⭐️</span> : <span>❌</span>}
-                    </h3>
-                    <div>
-                        {" "}
-                        <Link to={`/cars`}>
-                            <button>Back</button>
-                        </Link>
-                    </div>
-                    <div>
-                        {" "}
-                        <Link to={`/cars/${id}/edit`}>
-                            <button>Edit</button>
-                        </Link>
-                    </div>
-                    <div>
-                        {" "}
-                        <button onClick={handleDelete}>Delete</button>
+                    <div style={{ display: "flex", alignItems: "center" }}>
+                        <img
+                            src={`https://geocar-exchange-backend.onrender.com${car.image_url}`}
+                            alt={`Car: ${car.make} ${car.model}`}
+                            style={{ maxWidth: '50%', height: 'auto', marginRight: '20px' }}
+                        />
+                        <div className="content">
+                            <h3 className="title is-3">
+                                Make: {car.make}<br />
+                                Model: {car.model}<br />
+                                Year: {car.year}<br />
+                                Price: {formatCurrency(parseFloat(car.price))}<br />
+                                Color: {car.color}<br />
+                                Mileage: {parseFloat(car.mileage).toLocaleString()}<br />
+                                Condition: {car.condition}<br />
+                                Location: {car.location}<br />
+                                Favorite: {car.is_favorite ? <span>⭐️</span> : <span>❌</span>}
+                            </h3>
+                        </div>
+                        <div className="buttons">
+                            <Link to={`/cars`}>
+                                <button className="button is-info">Back</button>
+                            </Link>
+                            <Link to={`/cars/${id}/edit`}>
+                                <button className="button is-primary">Edit</button>
+                            </Link>
+                            <button className="button is-danger" onClick={handleDelete}>Delete</button>
+                        </div>
                     </div>
                 </>
             )}
