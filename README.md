@@ -69,6 +69,9 @@ Click on a car to reveal additional details.
 
 The expanded view includes comprehensive information about the car.
 
+### Radar.io
+The user is promted to share their location through the browser and using the Radar.io API the distance between them and the car they are viewing is calculated and shown on the page. 
+
 ## Edit Car
 
 Update or mark a car as "For Sale" on the Edit Car page.
